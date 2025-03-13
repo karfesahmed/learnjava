@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استقبال مدخلات من المستخدم في Java</title>
+
+    <!-- تحميل Prism.js لتلوين الأكواد -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        🔟 استقبال مدخلات من المستخدم في Java
+    </header>
+    <nav>
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="lesson9.html">⬅ الدرس السابق</a>
+    </nav>
+    <main>
+        <h2>📌 ما هي المدخلات؟</h2>
+        <p>
+            المدخلات <span class="english">User Input</span> تعني البيانات التي يقوم المستخدم بإدخالها أثناء تشغيل البرنامج.  
+            في Java، نستخدم <span class="english">Scanner</span> لاستقبال المدخلات من لوحة المفاتيح.
+        </p>
+
+        <h2>🔹 كيفية استقبال مدخلات من المستخدم؟</h2>
+        <p>لاستقبال مدخلات في Java، نستخدم الكود التالي:</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+import java.util.Scanner; // استيراد الكلاس Scanner
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in); // إنشاء كائن Scanner
+
+        System.out.print("أدخل اسمك: ");
+        String name = input.nextLine(); // استقبال النص
+
+        System.out.print("أدخل عمرك: ");
+        int age = input.nextInt(); // استقبال رقم صحيح
+
+        System.out.println("مرحبًا " + name + "! عمرك هو " + age + " سنة.");
+    }
+}
+            </code></pre>
+        </div>
+
+        <h2>🔹 كيفية استقبال أنواع مختلفة من البيانات؟</h2>
+        <p>يمكن استقبال أنواع مختلفة من البيانات باستخدام <span class="english">Scanner</span>:</p>
+
+        <table border="1">
+            <tr>
+                <th>نوع البيانات</th>
+                <th>الدالة المستخدمة</th>
+                <th>مثال</th>
+            </tr>
+            <tr>
+                <td>نص <span class="english">(String)</span></td>
+                <td><span class="english">nextLine()</span></td>
+                <td><code>String name = input.nextLine();</code></td>
+            </tr>
+            <tr>
+                <td>عدد صحيح <span class="english">(int)</span></td>
+                <td><span class="english">nextInt()</span></td>
+                <td><code>int age = input.nextInt();</code></td>
+            </tr>
+            <tr>
+                <td>عدد عشري <span class="english">(double)</span></td>
+                <td><span class="english">nextDouble()</span></td>
+                <td><code>double price = input.nextDouble();</code></td>
+            </tr>
+            <tr>
+                <td>حرف واحد <span class="english">(char)</span></td>
+                <td><span class="english">next().charAt(0)</span></td>
+                <td><code>char letter = input.next().charAt(0);</code></td>
+            </tr>
+            <tr>
+                <td>قيمة منطقية <span class="english">(boolean)</span></td>
+                <td><span class="english">nextBoolean()</span></td>
+                <td><code>boolean isTrue = input.nextBoolean();</code></td>
+            </tr>
+        </table>
+
+        <h2>🔹 ملاحظة هامة حول استخدام <span class="english">nextLine()</span> بعد <span class="english">nextInt()</span></h2>
+        <p>
+            عند استخدام <span class="english">nextInt()</span> أو <span class="english">nextDouble()</span> ثم محاولة استخدام <span class="english">nextLine()</span> بعدها، فقد تحدث مشكلة بسبب انتقال السطر الجديد.
+            الحل هو إضافة <span class="english">input.nextLine();</span> بعد استقبال الرقم.
+        </p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("أدخل عمرك: ");
+        int age = input.nextInt();
+        input.nextLine(); // لحل مشكلة السطر الجديد
+
+        System.out.print("أدخل اسمك: ");
+        String name = input.nextLine();
+
+        System.out.println("مرحبًا " + name + "! عمرك هو " + age + " سنة.");
+    }
+}
+            </code></pre>
+        </div>
+
+        <h2>📌 مثال عملي: حساب مجموع رقمين يُدخلهما المستخدم</h2>
+        <p>في هذا المثال، سيقوم المستخدم بإدخال رقمين، والبرنامج سيحسب المجموع.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("أدخل الرقم الأول: ");
+        double num1 = input.nextDouble();
+
+        System.out.print("أدخل الرقم الثاني: ");
+        double num2 = input.nextDouble();
+
+        double sum = num1 + num2;
+        System.out.println("المجموع: " + sum);
+    }
+}
+            </code></pre>
+        </div>
+
+        <h2>⚡ تمرين عملي</h2>
+        <p>جرب حل الأسئلة التالية:</p>
+        <ol>
+            <li>✅ قم بإنشاء برنامج يطلب من المستخدم إدخال اسمه، ثم يطبع "مرحبًا [الاسم]!"</li>
+            <li>✅ اكتب برنامجًا يطلب من المستخدم إدخال رقمين ثم يحسب الفرق بينهما.</li>
+            <li>✅ أنشئ برنامجًا يسأل المستخدم عن درجة حرارته ثم يطبع ما إذا كانت أعلى أو أقل من 37 درجة.</li>
+        </ol>
+
+        <!-- زر عرض الحلول -->
+        <button class="solution-btn" onclick="toggleSolution()">📜 عرض الحلول</button>
+
+        <!-- مربع الحلول -->
+        <div id="solution-box" class="solution-box"></div>
+
+    </main>
+
+    <script>
+        function toggleSolution() {
+            let box = document.getElementById("solution-box");
+
+            if (box.innerHTML.trim() === "") {
+                box.innerHTML = `
+                    <h3>📖 الحلول:</h3>
+                    <ul>
+                        <li><strong>برنامج يطبع "مرحبًا [الاسم]":</strong> 
+                            <pre><code class="language-java">
+Scanner input = new Scanner(System.in);
+System.out.print("أدخل اسمك: ");
+String name = input.nextLine();
+System.out.println("مرحبًا " + name + "!");
+                            </code></pre>
+                        </li>
+                        <li><strong>برنامج لحساب الفرق بين رقمين:</strong> 
+                            <pre><code class="language-java">
+Scanner input = new Scanner(System.in);
+System.out.print("أدخل الرقم الأول: ");
+int a = input.nextInt();
+System.out.print("أدخل الرقم الثاني: ");
+int b = input.nextInt();
+System.out.println("الفرق: " + (a - b));
+                            </code></pre>
+                        </li>
+                    </ul>
+                `;
+                Prism.highlightAll();
+            }
+
+            box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+        }
+
+        function copyCode(button) {
+            let code = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(code);
+            button.textContent = "✅ تم النسخ";
+            setTimeout(() => button.textContent = "📋 نسخ", 1500);
+        }
+    </script>
+
+</body>
+</html>
