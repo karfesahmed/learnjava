@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحلقات التكرارية في Java</title>
+
+    <!-- تحميل Prism.js لتلوين الأكواد -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <header>
+        7️⃣ الحلقات التكرارية (Loops) في Java
+    </header>
+    <nav>
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="lesson6.html">➡ الدرس السابق</a>
+        <a href="lesson8.html"> الدرس التالي ⬅</a>
+    </nav>
+    <main>
+        <h2>🔄 ما هي الحلقات التكرارية؟</h2>
+        <p>
+            الحلقات التكرارية في <span class="english">Java</span> تُستخدم لتنفيذ كود معين عدة مرات حتى يتحقق شرط معين. هناك ثلاثة أنواع رئيسية:
+        </p>
+
+        <h2>🔹 1. حلقة <span class="english">for</span></h2>
+        <p>تُستخدم عندما يكون عدد التكرارات معروفًا.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+// طباعة الأرقام من 1 إلى 5
+for (int i = 1; i <= 5; i++) {
+    System.out.println("الرقم: " + i);
+}
+            </code></pre>
+        </div>
+
+        <h2>🔸 2. حلقة <span class="english">while</span></h2>
+        <p>تُستخدم عندما لا يكون عدد التكرارات معروفًا مسبقًا.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+int count = 1;
+while (count <= 5) {
+    System.out.println("التكرار: " + count);
+    count++;
+}
+            </code></pre>
+        </div>
+
+        <h2>🔻 3. حلقة <span class="english">do-while</span></h2>
+        <p>تنفذ الكود مرة واحدة على الأقل، حتى لو كان الشرط خاطئًا من البداية.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+int number = 1;
+do {
+    System.out.println("القيمة: " + number);
+    number++;
+} while (number <= 5);
+            </code></pre>
+        </div>
+
+        <h2>⚡ تمرين عملي</h2>
+        <p>جرب حل الأسئلة التالية:</p>
+        <ol>
+            <li>ما الفرق بين <span class="english">for</span> و <span class="english">while</span>؟</li>
+            <li>اكتب كودًا يستخدم <span class="english">for</span> لطباعة الأرقام من 10 إلى 1.</li>
+            <li>كيف يمكن استخدام <span class="english">while</span> لطباعة الأعداد الزوجية بين 1 و 10؟</li>
+        </ol>
+
+        <!-- زر عرض الحلول -->
+        <button class="solution-btn" onclick="toggleSolution()">📜 عرض الحلول</button>
+
+        <!-- مربع الحلول -->
+        <div id="solution-box" class="solution-box"></div>
+
+    </main>
+
+    <script>
+        function toggleSolution() {
+            let box = document.getElementById("solution-box");
+
+            if (box.innerHTML.trim() === "") {
+                box.innerHTML = `
+                    <h3>📖 الحلول:</h3>
+                    <ul>
+                        <li><strong>الفرق بين for و while:</strong> 
+                            <p><code>for</code> تُستخدم عندما يكون عدد التكرارات معروفًا، بينما <code>while</code> تُستخدم عندما يكون عدد التكرارات غير محدد.</p>
+                        </li>
+                        <li><strong>كود لطباعة الأرقام من 10 إلى 1:</strong> 
+                            <pre><code class="language-java">
+for (int i = 10; i >= 1; i--) {
+    System.out.println(i);
+}
+                            </code></pre>
+                        </li>
+                        <li><strong>كود لطباعة الأعداد الزوجية بين 1 و 10:</strong> 
+                            <pre><code class="language-java">
+int num = 2;
+while (num <= 10) {
+    System.out.println(num);
+    num += 2;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                `;
+                Prism.highlightAll();
+            }
+
+            box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+        }
+
+        function copyCode(button) {
+            let code = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(code);
+            button.textContent = "✅ تم النسخ";
+            setTimeout(() => button.textContent = "📋 نسخ", 1500);
+        }
+    </script>
+
+</body>
+</html>

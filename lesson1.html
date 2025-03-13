@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقدمة عن Java</title>
+
+    <!-- تحميل مكتبة Prism.js وملفات التنسيق الخاصة بها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+    <!-- ملف CSS المخصص -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        1️⃣ 🚀 مقدمة عن Java
+    </header>
+
+    <nav>
+        <a href="index.html">🏠 الرئيسية</a>
+        
+        <a href="lesson2.html"> الدرس التالي ⬅</a>
+    </nav>
+
+    <main>
+        <h2>🔍 ما هي Java؟</h2>
+        <p>
+            Java هي لغة برمجة عالية المستوى تم تطويرها من قبل Sun Microsystems في التسعينيات. تتميز بكونها لغة 
+            <b>موجهة للكائنات (Object-Oriented)</b>، مما يجعلها مثالية لتطوير التطبيقات الكبيرة والمعقدة.
+        </p>
+
+        <h2>🎯 مميزات Java</h2>
+        <ul>
+            <li><b>✅ مستقلة عن المنصة:</b> تعمل Java على أي نظام تشغيل بفضل <span class="english">Java Virtual Machine (JVM)</span>.</li>
+            <li><b>💡 كائنية التوجه:</b> تدعم Java البرمجة الشيئية، مما يسهل تطوير التطبيقات القابلة للتوسع.</li>
+            <li><b>🔒 أمان عالي:</b> توفر Java ميزات أمان متقدمة تمنع الفيروسات والتلاعب بالكود.</li>
+            <li><b>♻️ إدارة تلقائية للذاكرة:</b> يقوم <span class="english">Garbage Collector</span> بإدارة الذاكرة تلقائيًا.</li>
+            <li><b>⚡ تعددية الخيوط:</b> تدعم Java تشغيل عدة مهام في نفس الوقت بكفاءة.</li>
+        </ul>
+
+        <h2>🛠️ كيف تعمل Java؟</h2>
+        <p>
+            Java تعتمد على مبدأ <b>“Compile Once, Run Anywhere”</b>، حيث يتم تحويل الكود إلى 
+            <span class="english">Bytecode</span> عبر <span class="english">Java Compiler</span>.
+            هذا <span class="english">Bytecode</span> يعمل على أي جهاز يدعم <span class="english">JVM</span>، مما يجعل Java مرنة.
+        </p>
+
+        
+
+    </main>
+
+    <script>
+        function copyCode(button) {
+            let codeBlock = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                button.textContent = "✅ تم النسخ";
+                setTimeout(() => button.textContent = "📋 نسخ", 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>

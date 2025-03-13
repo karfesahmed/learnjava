@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدوال في Java للمبتدئين</title>
+
+    <!-- تحميل Prism.js لتلوين الأكواد -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        9️⃣ الدوال (Functions) في Java
+    </header>
+    <nav>
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="lesson8.html">⬅ الدرس السابق</a>
+    </nav>
+    <main>
+        <h2>📌 ما هي الدوال؟</h2>
+        <p>
+            الدوال <span class="english">Functions</span> هي كتل من الكود يتم تعريفها لتنفيذ مهمة معينة عند استدعائها.
+            تساعد الدوال في جعل الكود أكثر تنظيمًا، كما تقلل من التكرار.
+        </p>
+
+        <h2>🔹 لماذا نستخدم الدوال؟</h2>
+        <ul>
+            <li>✅ لتقليل تكرار الكود.</li>
+            <li>✅ لتقسيم البرنامج إلى أجزاء أصغر يسهل إدارتها.</li>
+            <li>✅ لجعل الكود أكثر قابلية للفهم والتعديل.</li>
+        </ul>
+
+        <h2>🔸 كيفية تعريف دالة في Java</h2>
+        <p>تعريف دالة يتكون من الأجزاء التالية:</p>
+        <ul>
+            <li><strong><span class="english">public</span>:</strong> تعني أن الدالة يمكن استدعاؤها من أي مكان في البرنامج.</li>
+            <li><strong><span class="english">static</span>:</strong> تعني أن الدالة تابعة للكلاس <span class="english">Class</span> وليس للكائنات.</li>
+            <li><strong><span class="english">void</span>:</strong> تعني أن الدالة لا ترجع أي قيمة.</li>
+            <li><strong>اسم الدالة:</strong> يجب أن يكون اسمًا يصف وظيفتها.</li>
+            <li><strong>المعاملات <span class="english">(Parameters)</span>:</strong> القيم التي تستقبلها الدالة (يمكن أن تكون فارغة).</li>
+            <li><strong>الجسم:</strong> وهو الكود الذي يتم تنفيذه عند استدعاء الدالة.</li>
+        </ul>
+
+        <h3>📌 مثال على دالة بسيطة:</h3>
+        <p>هذه الدالة تطبع رسالة ترحيبية.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+public class Main {
+    public static void sayHello() {
+        System.out.println("مرحبًا بالجميع!");
+    }
+
+    public static void main(String[] args) {
+        sayHello(); // استدعاء الدالة
+    }
+}
+            </code></pre>
+        </div>
+
+        <h2>🔹 الدوال التي تُرجع قيمة</h2>
+        <p>بعض الدوال تُرجع قيمة باستخدام <span class="english">return</span>:</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+public class Main {
+    public static int sum(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        int result = sum(5, 3);
+        System.out.println("المجموع: " + result); // النتيجة: 8
+    }
+}
+            </code></pre>
+        </div>
+
+        <h2>🔹 الدوال التي تستقبل معاملات (Parameters)</h2>
+        <p>يمكن للدالة استقبال بيانات عند استدعائها:</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+public class Main {
+    public static void greet(String name) {
+        System.out.println("مرحبًا، " + name + "!");
+    }
+
+    public static void main(String[] args) {
+        greet("أحمد");
+        greet("سارة");
+    }
+}
+            </code></pre>
+        </div>
+
+        <h2>📌 مثال عملي: حساب السعر بعد الضريبة</h2>
+        <p>دالة لحساب السعر بعد إضافة ضريبة 15%:</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+public class Main {
+    public static double calculatePrice(double price) {
+        double tax = price * 0.15;
+        return price + tax;
+    }
+
+    public static void main(String[] args) {
+        double finalPrice = calculatePrice(100);
+        System.out.println("السعر النهائي: " + finalPrice); // 115.0
+    }
+}
+            </code></pre>
+        </div>
+
+        <h2>⚡ تمرين عملي</h2>
+        <p>جرب حل الأسئلة التالية:</p>
+        <ol>
+            <li>✅ قم بإنشاء دالة ترجع أكبر عدد بين رقمين.</li>
+            <li>✅ اكتب دالة تستقبل اسم شخص وعمره ثم تطبع رسالة ترحيبية.</li>
+            <li>✅ أنشئ دالة تحسب عدد الأحرف في كلمة معينة وترجع النتيجة.</li>
+        </ol>
+
+        <!-- زر عرض الحلول -->
+        <button class="solution-btn" onclick="toggleSolution()">📜 عرض الحلول</button>
+
+        <!-- مربع الحلول -->
+        <div id="solution-box" class="solution-box"></div>
+
+    </main>
+
+    <script>
+        function toggleSolution() {
+            let box = document.getElementById("solution-box");
+
+            if (box.innerHTML.trim() === "") {
+                box.innerHTML = `
+                    <h3>📖 الحلول:</h3>
+                    <ul>
+                        <li><strong>دالة ترجع أكبر عدد بين رقمين:</strong> 
+                            <pre><code class="language-java">
+public static int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+                            </code></pre>
+                        </li>
+                        <li><strong>دالة ترحب بالمستخدم وتعرض عمره:</strong> 
+                            <pre><code class="language-java">
+public static void welcome(String name, int age) {
+    System.out.println("مرحبًا " + name + "! عمرك هو " + age + " سنة.");
+}
+                            </code></pre>
+                        </li>
+                        <li><strong>دالة لحساب عدد الأحرف في كلمة:</strong> 
+                            <pre><code class="language-java">
+public static int countLetters(String word) {
+    return word.length();
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                `;
+                Prism.highlightAll();
+            }
+
+            box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+        }
+
+        function copyCode(button) {
+            let code = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(code);
+            button.textContent = "✅ تم النسخ";
+            setTimeout(() => button.textContent = "📋 نسخ", 1500);
+        }
+    </script>
+
+</body>
+</html>

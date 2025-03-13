@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Fira+Code:wght@400;600&display=swap');
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+code, pre {
+    direction: ltr;
+    text-align: left;
+    background-color: #2d2d2d;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    color: #ffffff;
+    display: block;
+    overflow-x: auto;
+}
+
+/* تمييز الكلمات الإنجليزية داخل النص العربي */
+.english-word {
+    color: #ffcc00;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+.highlight {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 3px solid #ff9800;
+}
+
+nav {
+    background-color: #2c2c2c;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: 0.3s; /* إضافة تأثير عند تمرير الماوس */
+}
+
+nav a:hover {
+    background-color: #ff9800;
+    color: black;
+    border-radius: 5px;
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    color: #ff9800;
+}
+
+/* صندوق الكود */
+pre {
+    background-color: #282c34;
+    color: #abb2bf;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.5;
+    direction: ltr;
+    text-align: left;
+    font-family: 'Fira Code', monospace; /* خط خاص بالأكواد */
+}
+
+/* صندوق الإخراج */
+.output-box {
+    background-color: #20232a;
+    color: #61dafb;
+    border: 1px solid #61dafb;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* زر النسخ */
+
+
+
+
+/* تمييز الكلمات الإنجليزية داخل النص العربي */
+.english {
+    font-family: 'Courier New', monospace;
+    color: #ffcc00;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* تحسين قائمة الدروس */
+.lesson-list {
+    list-style: none;
+    padding: 0;
+}
+
+.lesson-list li {
+    background-color: #2c2c2c;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.lesson-list li:hover {
+    background-color: #ff9800;
+    color: black;
+}
+.lesson p,
+.lesson ul,
+.lesson li {
+    line-height: 1.8; /* زيادة التباعد بين الأسطر */
+    margin-bottom: 10px; /* إضافة مسافة أسفل كل فقرة */
+}
+
+.lesson h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+pre, code {
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Fira+Code:wght@400;600&display=swap');
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+code, pre {
+    direction: ltr;
+    text-align: left;
+    background-color: #2d2d2d;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Fira Code', monospace;
+    color: #ffffff;
+    display: block;
+    overflow-x: auto;
+    transition: 0.3s; /* تأثير عند تمرير الماوس */
+}
+
+pre:hover {
+    background-color: #3b3b3b;
+}
+
+/* زر تشغيل الأكواد */
+.run-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    background: #ffcc00;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.run-btn:hover {
+    background: #ff9800;
+}
+
+/* تمييز الكلمات الإنجليزية داخل النص العربي */
+.english {
+    font-family: 'Courier New', monospace;
+    color: #ffcc00;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* تحسين قائمة الدروس */
+.lesson-list {
+    list-style: none;
+    padding: 0;
+}
+
+.lesson-list li {
+    background-color: #2c2c2c;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    text-align: center;
+}
+
+.lesson-list li:hover {
+    background-color: #ff9800;
+    color: black;
+    transform: scale(1.05); /* تأثير عند تمرير الماوس */
+}
+
+/* صندوق الإخراج */
+.output-box {
+    background-color: #20232a;
+    color: #61dafb;
+    border: 1px solid #61dafb;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* زر النسخ */
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff9800;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background: #e68900;
+}
+
+/* تحسين العناوين */
+h2 {
+    color: #ffcc00;
+}
+
+h3 {
+    color: #ffa726;
+}
+
+/* تأثير عند النقر على الروابط */
+a {
+    color: #ffcc00;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ff9800;
+    text-decoration: underline;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+.code-container {
+    position: relative;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    background-color: #2e3440;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+/* شريط الأزرار العلوي مع الدوائر */
+.code-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #3b4252;
+}
+
+.code-header svg {
+    margin-left: 10px;
+}
+
+/* زر النسخ */
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #81A1C1;
+    color: #2e3440;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background: #88C0D0;
+}
+
+/* كود برمجي بتنسيق خاص */
+pre {
+    background: #2e3440;
+    padding: 15px;
+    margin: 0;
+    overflow-x: auto;
+    color: #d8dee9;
+}
+
+pre code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    display: block;
+    color: #d8dee9;
+}
+
+/* تحديد ألوان الكلمات المفتاحية */
+.keyword { color: #81A1C1; font-weight: bold; }
+.function { color: #88C0D0; }
+.number { color: #B48EAD; }
+.string { color: #A3BE8C; }
+
+/* اسم اللغة في الأسفل */
+.code-footer {
+    text-align: right;
+    padding: 8px;
+    font-size: 12px;
+    color: #c8d0e0;
+    background-color: #3b4252;
+}
+/*=====================*/
+.solution-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.solution-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #555;
+    padding: 10px;
+    text-align: center;
+}
+
+.data-table th {
+    background-color: #333;
+}
+
+
+/*===========================*/
+.solution-box {
+    display: none;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.solution-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.solution-btn:hover {
+    background-color: #218838;
+}
+.code-container {
+    position: relative;
+    background: #2d2d2d;
+    padding: 25px 10px 10px 10px; /* زيادة المساحة العلوية */
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px; /* لضمان أنه في أقصى اليمين */
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 3px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 3px;
+    z-index: 10; /* لضمان ظهوره فوق مربع الكود */
+    width: fit-content; /* يجعل الزر يأخذ حجم النص فقط */
+    min-width: 40px; /* حد أدنى مناسب */
+    white-space: nowrap; /* يمنع تغيير السطر داخل الزر */
+}
+
+.copy-btn:hover {
+    background: #ffdb4d;
+}

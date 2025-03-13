@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشروط في Java</title>
+
+    <!-- تحميل Prism.js لتلوين الأكواد -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        6️⃣ الشروط في Java (if - else if - else)
+    </header>
+    <nav>
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="lesson5.html">➡ الدرس السابق</a>
+        <a href="lesson7.html"> الدرس التالي ⬅</a>
+    </nav>
+    <main>
+        <h2>⚖️ ما هي الشروط في <span class="english">Java</span>؟</h2>
+        <p>
+            تستخدم العبارات الشرطية في <span class="english">Java</span> لاتخاذ قرارات بناءً على القيم المعطاة. إذا تحقق الشرط، يتم تنفيذ كود معين، وإذا لم يتحقق، يمكن تنفيذ كود آخر.
+        </p>
+
+        <h2>🔹 1. if statement</h2>
+        <p>يتم تنفيذ الكود داخل <span class="english">if</span> فقط إذا كان الشرط صحيحًا (<span class="english">true</span>).</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+int age = 20;
+if (age >= 18) {
+    System.out.println("أنت بالغ.");
+}
+            </code></pre>
+        </div>
+
+        <h2>🔸 2. if - else</h2>
+        <p>إذا لم يتحقق شرط <span class="english">if</span>، يتم تنفيذ الجزء داخل <span class="english">else</span>.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+int age = 16;
+if (age >= 18) {
+    System.out.println("يمكنك القيادة.");
+} else {
+    System.out.println("لا يمكنك القيادة بعد.");
+}
+            </code></pre>
+        </div>
+
+        <h2>🔷 3. if - else if - else</h2>
+        <p>تستخدم <span class="english">else if</span> عندما يكون لدينا عدة احتمالات.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+int age = 14;
+if (age >= 18) {
+    System.out.println("يمكنك القيادة.");
+} else if (age >= 16) {
+    System.out.println("يمكنك القيادة برخصة مؤقتة.");
+} else {
+    System.out.println("عليك الانتظار حتى تكبر.");
+}
+            </code></pre>
+        </div>
+
+        <h2>✍️ تمرين</h2>
+        <p>
+            قم بإنشاء متغير <span class="english">age</span> يمثل عمر المستخدم، ثم استخدم الشروط للتحقق من الفئات العمرية التالية:
+        </p>
+        <ol>
+            <li>إذا كان العمر أقل من 13، اطبع: <span class="english">"You are a child."</span></li>
+            <li>إذا كان بين 13 و 19، اطبع: <span class="english">"You are a teenager."</span></li>
+            <li>إذا كان 20 أو أكثر، اطبع: <span class="english">"You are an adult."</span></li>
+        </ol>
+
+        <!-- زر عرض الحلول -->
+        <button class="solution-btn" onclick="toggleSolution()">📜 عرض الحلول</button>
+
+        <!-- مربع الحلول -->
+        <div id="solution-box" class="solution-box"></div>
+
+    </main>
+
+    <script>
+        function toggleSolution() {
+            let box = document.getElementById("solution-box");
+
+            if (box.innerHTML.trim() === "") {
+                box.innerHTML = `
+                    <h3>📖 الحلول:</h3>
+                    <ul>
+                        <li><strong>كود التحقق من الفئة العمرية:</strong> 
+                            <pre><code class="language-java">
+int age = 15;
+if (age < 13) {
+    System.out.println("You are a child.");
+} else if (age >= 13 && age <= 19) {
+    System.out.println("You are a teenager.");
+} else {
+    System.out.println("You are an adult.");
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                `;
+                Prism.highlightAll();
+            }
+
+            box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+        }
+
+        function copyCode(button) {
+            let code = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(code);
+            button.textContent = "✅ تم النسخ";
+            setTimeout(() => button.textContent = "📋 نسخ", 1500);
+        }
+    </script>
+
+</body>
+</html>

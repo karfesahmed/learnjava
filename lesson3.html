@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أنواع البيانات في Java</title>
+
+    <!-- تحميل Prism.js لتلوين الأكواد -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <header>
+        3️⃣ أنواع البيانات في Java
+    </header>
+    <nav>
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="lesson2.html">➡ الدرس السابق</a>
+        <a href="lesson4.html"> الدرس التالي ⬅</a>
+    </nav>
+    <main>
+        <h2>🔍 ما هي أنواع البيانات؟</h2>
+        <p>
+            في <span class="english">Java</span>، يتم استخدام <strong>أنواع البيانات</strong> لتعريف المتغيرات وتحديد نوع القيم التي يمكنها تخزينها.
+            هناك نوعان أساسيان:
+        </p>
+        <ul>
+            <li><strong>الأنواع الأولية (Primitive Types)</strong>: مثل الأرقام والحروف والقيم المنطقية.</li>
+            <li><strong>الأنواع المرجعية (Reference Types)</strong>: مثل الكائنات والمصفوفات.</li>
+        </ul>
+
+        <h2>🟢 1. الأنواع الأولية (Primitive Types)</h2>
+        <p>هذه الأنواع هي الأبسط، وتخزن القيم مباشرة في الذاكرة.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+int age = 25;       // عدد صحيح
+double price = 99.99; // عدد عشري
+char grade = 'A';   // حرف واحد
+boolean isJavaFun = true; // قيمة منطقية
+            </code></pre>
+        </div>
+
+        <h2>🔵 2. الأنواع المرجعية (Reference Types)</h2>
+        <p>هذه الأنواع تخزن مراجع للكائنات بدلًا من القيم مباشرة.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+String name = "Abdou"; // سلسلة نصية
+int[] numbers = {1, 2, 3, 4}; // مصفوفة
+            </code></pre>
+        </div>
+
+        <h2>⚖️ الفرق بين الأنواع الأولية والمرجعية</h2>
+        <table border="1" width="100%" cellpadding="8" cellspacing="0">
+            <tr>
+                <th>الميزة</th>
+                <th>الأنواع الأولية</th>
+                <th>الأنواع المرجعية</th>
+            </tr>
+            <tr>
+                <td>طريقة التخزين</td>
+                <td>تخزن القيم مباشرة</td>
+                <td>تخزن مراجع للكائنات</td>
+            </tr>
+            <tr>
+                <td>حجم الذاكرة</td>
+                <td>تستخدم ذاكرة أقل</td>
+                <td>تحتاج إلى ذاكرة أكبر</td>
+            </tr>
+            <tr>
+                <td>الأداء</td>
+                <td>أسرع في الوصول إلى القيم</td>
+                <td>أبطأ بسبب استخدام المراجع</td>
+            </tr>
+        </table>
+
+        <h2>✍️ تمرين</h2>
+        <p>اختبر معلوماتك بالإجابة عن الأسئلة التالية:</p>
+        <ol>
+            <li>ما الفرق بين <span class="english">int</span> و <span class="english">double</span> في <span class="english">Java</span>؟</li>
+            <li>كيف تُعرّف متغيرًا لتخزين **كلمة نصية** في <span class="english">Java</span>؟</li>
+            <li>ما نوع البيانات المناسب لتخزين القيم المنطقية (<span class="english">true/false</span>)؟</li>
+        </ol>
+
+        <!-- زر عرض الحلول -->
+        <button class="solution-btn" onclick="toggleSolution()">📜 عرض الحلول</button>
+
+        <!-- مربع الحلول -->
+        <div id="solution-box" class="solution-box"></div>
+
+    </main>
+
+    <script>
+        function toggleSolution() {
+            let box = document.getElementById("solution-box");
+
+            if (box.innerHTML.trim() === "") {
+                box.innerHTML = `
+                    <h3>📖 الحلول:</h3>
+                    <ul>
+                        <li><strong>الفرق بين int و double:</strong> 
+                            <p><code>int</code> يخزن أعدادًا صحيحة، بينما <code>double</code> يخزن أعدادًا عشرية.</p>
+                        </li>
+                        <li><strong>تعريف متغير نصي:</strong> 
+                            <p>نستخدم <code>String</code> كما في المثال التالي:</p>
+                            <pre><code class="language-java">String message = "Hello, Java!";</code></pre>
+                        </li>
+                        <li><strong>نوع البيانات للقيم المنطقية:</strong> 
+                            <p>نستخدم <code>boolean</code> كما في المثال:</p>
+                            <pre><code class="language-java">boolean isJavaFun = true;</code></pre>
+                        </li>
+                    </ul>
+                `;
+                Prism.highlightAll();
+            }
+
+            box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+        }
+
+        function copyCode(button) {
+            let code = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(code);
+            button.textContent = "✅ تم النسخ";
+            setTimeout(() => button.textContent = "📋 نسخ", 1500);
+        }
+    </script>
+
+</body>
+</html>

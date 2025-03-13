@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المصفوفات في Java</title>
+
+    <!-- تحميل Prism.js لتلوين الأكواد -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <header>
+        8️⃣ المصفوفات (Arrays) في Java
+    </header>
+    <nav>
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="lesson7.html">➡ الدرس السابق</a>
+        <a href="lesson9.html"> الدرس التالي ⬅</a>
+    </nav>
+    <main>
+        <h2>📌 ما هي المصفوفات؟</h2>
+        <p>
+            <span class="english">Arrays</span> هي بنية بيانات تُستخدم لتخزين مجموعة من القيم من نفس النوع داخل متغير واحد. 
+        </p>
+
+        <h2>🔹 كيفية تعريف مصفوفة</h2>
+        <p>يمكنك تعريف مصفوفة في <span class="english">Java</span> باستخدام الكود التالي:</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+// تعريف مصفوفة تحتوي على 5 أعداد صحيحة
+int[] numbers = {10, 20, 30, 40, 50};
+
+// طباعة العنصر الأول
+System.out.println(numbers[0]); // النتيجة: 10
+            </code></pre>
+        </div>
+
+        <h2>🔸 الوصول إلى عناصر المصفوفة</h2>
+        <p>يتم استخدام الفهارس (indices) للوصول إلى عناصر المصفوفة.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+int[] ages = {18, 21, 25, 30};
+System.out.println("العمر الثاني: " + ages[1]); // النتيجة: 21
+            </code></pre>
+        </div>
+
+        <h2>🔻 استخدام الحلقات مع المصفوفات</h2>
+        <p>يمكنك استخدام حلقة <span class="english">for</span> للتكرار على جميع عناصر المصفوفة:</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+String[] names = {"علي", "مريم", "فاطمة"};
+
+for (int i = 0; i < names.length; i++) {
+    System.out.println("الاسم: " + names[i]);
+}
+            </code></pre>
+        </div>
+
+        <h2>⚡ تمرين عملي</h2>
+        <p>جرب حل الأسئلة التالية:</p>
+        <ol>
+            <li>ما الفرق بين تعريف مصفوفة من الأعداد ومصفوفة من النصوص؟</li>
+            <li>قم بإنشاء مصفوفة تخزن أسماء 5 مدن، ثم اطبع جميع القيم باستخدام حلقة <span class="english">for</span>.</li>
+            <li>اكتب كودًا يتحقق مما إذا كان عدد معين موجودًا داخل مصفوفة أم لا.</li>
+        </ol>
+
+        <!-- زر عرض الحلول -->
+        <button class="solution-btn" onclick="toggleSolution()">📜 عرض الحلول</button>
+
+        <!-- مربع الحلول -->
+        <div id="solution-box" class="solution-box"></div>
+
+    </main>
+
+    <script>
+        function toggleSolution() {
+            let box = document.getElementById("solution-box");
+
+            if (box.innerHTML.trim() === "") {
+                box.innerHTML = `
+                    <h3>📖 الحلول:</h3>
+                    <ul>
+                        <li><strong>الفرق بين مصفوفة الأعداد والنصوص:</strong> 
+                            <p>مصفوفة الأعداد تحتوي على أعداد صحيحة أو عشرية، بينما مصفوفة النصوص تحتوي على <code>Strings</code>.</p>
+                        </li>
+                        <li><strong>كود تخزين وطباعة أسماء مدن:</strong> 
+                            <pre><code class="language-java">
+String[] cities = {"الجزائر", "القاهرة", "الرياض", "دمشق", "تونس"};
+
+for (int i = 0; i < cities.length; i++) {
+    System.out.println("المدينة: " + cities[i]);
+}
+                            </code></pre>
+                        </li>
+                        <li><strong>كود للتحقق من وجود عدد معين في مصفوفة:</strong> 
+                            <pre><code class="language-java">
+int[] numbers = {10, 20, 30, 40, 50};
+int target = 30;
+boolean found = false;
+
+for (int num : numbers) {
+    if (num == target) {
+        found = true;
+        break;
+    }
+}
+
+if (found) {
+    System.out.println("العدد موجود!");
+} else {
+    System.out.println("العدد غير موجود!");
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                `;
+                Prism.highlightAll();
+            }
+
+            box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+        }
+
+        function copyCode(button) {
+            let code = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(code);
+            button.textContent = "✅ تم النسخ";
+            setTimeout(() => button.textContent = "📋 نسخ", 1500);
+        }
+    </script>
+
+</body>
+</html>

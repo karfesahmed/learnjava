@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أول كود في Java</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        2️⃣ 🖥️ أول كود في Java
+    </header>
+
+    
+    <nav>
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="lesson1.html">➡ الدرس السابق</a>
+        <a href="lesson3.html"> الدرس التالي ⬅</a>
+    </nav>
+
+    <main>
+        <h2>🎯 مقدمة</h2>
+        <p>
+            <span class="english">Java</span> هي واحدة من أشهر لغات البرمجة في العالم! لنبدأ بكتابة أول كود بسيط يقوم بطباعة 
+            <span class="english">Hello, World!</span> على الشاشة.
+        </p>
+
+        <h2>📝 الكود:</h2>
+        <pre>
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <code id="code1">
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+            </code>
+        </pre>
+
+        <h2>💡 الشرح المفصل</h2>
+        <ul>
+            <li><span class="english">public class Main</span> - يُعرّف كلاس باسم <b>Main</b>، وهو ضروري لكل برنامج في <span class="english">Java</span>.</li> <br>
+            <li><span class="english">public static void main(String[] args)</span> - هذه الدالة هي نقطة البداية لكل برنامج <span class="english">Java</span>.</li><br>
+            <li><span class="english">System.out.println("Hello, World!");</span> - تقوم هذه الجملة بطباعة النص <b>Hello, World!</b> على الشاشة.</li><br>
+        </ul>
+
+        <h2>📌 النتيجة المتوقعة:</h2>
+        <pre class="output-box">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <code id="output1">
+Hello, World!
+            </code>
+        </pre>
+        <h2>🛠️ تمرين تطبيقي</h2>
+        <p>جرب تعديل الكود السابق لطباعة الجملة التالية بدلًا من <span class="english">Hello, World!</span> : </p>
+        
+        <pre class="output-box">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <code id="exercise1">
+                Welcome Abdou
+            </code>
+        </pre>
+
+        <p>حاول كتابته بنفسك، ثم قم بتشغيله لترى النتيجة! 🎯</p>
+        <h2>❓ لماذا نبدأ بـ "Hello, World!" ؟</h2>
+        <p>
+            هذا الكود هو التقليدي الذي يستخدمه المبرمجون عند تعلم لغة جديدة، لأنه بسيط وسهل الفهم ويساعدك على التأكد من أن بيئة التطوير لديك تعمل بشكل صحيح.
+        </p>
+
+    </main>
+
+    <script>
+        function copyCode(button) {
+            let codeBlock = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                button.textContent = "✅ تم النسخ";
+                setTimeout(() => button.textContent = "📋 نسخ", 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>

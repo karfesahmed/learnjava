@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العمليات الحسابية في Java</title>
+
+    <!-- تحميل Prism.js لتلوين الأكواد -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <header>
+        5️⃣ العمليات الحسابية في Java
+    </header>
+    <nav>
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="lesson4.html">➡ الدرس السابق</a>
+        <a href="lesson6.html"> الدرس التالي ⬅</a>
+    </nav>
+    <main>
+        <h2>🧮 العمليات الحسابية في Java</h2>
+        <p>
+            تدعم <span class="english">Java</span> مجموعة من العمليات الحسابية مثل الجمع، الطرح، الضرب، القسمة، وباقي القسمة.
+        </p>
+
+        <h2>➕ 1. العمليات الحسابية الأساسية</h2>
+        <p>فيما يلي بعض العمليات الأساسية في Java:</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+int a = 10;
+int b = 5;
+
+int sum = a + b;      // جمع
+int difference = a - b; // طرح
+int product = a * b;  // ضرب
+int quotient = a / b; // قسمة
+int remainder = a % b; // باقي القسمة
+            </code></pre>
+        </div>
+
+        <ul>
+            <li><strong>الجمع (+)</strong>: لحساب مجموع رقمين.</li>
+            <li><strong>الطرح (-)</strong>: لحساب الفرق بين رقمين.</li>
+            <li><strong>الضرب (*)</strong>: لحساب ناتج ضرب رقمين.</li>
+            <li><strong>القسمة (/)</strong>: لحساب ناتج القسمة (قسمة صحيحة للأعداد الصحيحة).</li>
+            <li><strong>باقي القسمة (%)</strong>: لحساب باقي القسمة بين رقمين.</li>
+        </ul>
+
+        <h2>🔄 2. العمليات المختصرة (التخصيص المركب)</h2>
+        <p>توفر Java طرقًا مختصرة لإجراء العمليات الحسابية باستخدام معاملات التخصيص المركب.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+int x = 10;
+
+x += 5; // x = x + 5
+x -= 3; // x = x - 3
+x *= 2; // x = x * 2
+x /= 4; // x = x / 4
+x %= 3; // x = x % 3
+            </code></pre>
+        </div>
+
+        <ul>
+            <li><strong>+=</strong>: يضيف القيمة إلى المتغير.</li>
+            <li><strong>-=</strong>: يطرح القيمة من المتغير.</li>
+            <li><strong>*=</strong>: يضرب المتغير بالقيمة.</li>
+            <li><strong>/=</strong>: يقسم المتغير على القيمة.</li>
+            <li><strong>%=</strong>: يأخذ باقي القسمة للمتغير.</li>
+        </ul>
+
+        <h2>📈 3. العمليات على الأعداد العشرية</h2>
+        <p>عند التعامل مع الأعداد العشرية، نستخدم <span class="english">double</span> بدلاً من <span class="english">int</span> لضمان دقة العمليات.</p>
+
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">📋 نسخ</button>
+            <pre><code class="language-java">
+double num1 = 7.5;
+double num2 = 2.5;
+
+double result = num1 / num2; // نتيجة القسمة العشرية
+            </code></pre>
+        </div>
+
+        <h2>✍️ تمرين</h2>
+        <p>اختبر معلوماتك بالإجابة عن الأسئلة التالية:</p>
+        <ol>
+            <li>ما ناتج العملية <span class="english">15 % 4</span>؟</li>
+            <li>كيف يمكنك مضاعفة قيمة متغير باستخدام معامل مختصر؟</li>
+            <li>ما الفرق بين القسمة باستخدام <span class="english">int</span> و <span class="english">double</span>؟</li>
+        </ol>
+
+        <!-- زر عرض الحلول -->
+        <button class="solution-btn" onclick="toggleSolution()">📜 عرض الحلول</button>
+
+        <!-- مربع الحلول -->
+        <div id="solution-box" class="solution-box"></div>
+
+    </main>
+
+    <script>
+        function toggleSolution() {
+            let box = document.getElementById("solution-box");
+
+            if (box.innerHTML.trim() === "") {
+                box.innerHTML = `
+                    <h3>📖 الحلول:</h3>
+                    <ul>
+                        <li><strong>ناتج 15 % 4:</strong> 
+                            <p>الناتج هو <code>3</code> لأن 15 ÷ 4 تساوي 3 والباقي 3.</p>
+                        </li>
+                        <li><strong>مضاعفة قيمة متغير:</strong> 
+                            <p>نستخدم معامل التخصيص المركب:</p>
+                            <pre><code class="language-java">x *= 2;</code></pre>
+                        </li>
+                        <li><strong>الفرق بين القسمة باستخدام int و double:</strong> 
+                            <p>عند استخدام <code>int</code> تكون القسمة صحيحة بدون كسر عشري، بينما عند استخدام <code>double</code> يتم الاحتفاظ بالأجزاء العشرية.</p>
+                            <pre><code class="language-java">
+int result1 = 5 / 2; // الناتج 2 (بدون كسر)
+double result2 = 5.0 / 2; // الناتج 2.5 (مع كسر عشري)
+                            </code></pre>
+                        </li>
+                    </ul>
+                `;
+                Prism.highlightAll();
+            }
+
+            box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+        }
+
+        function copyCode(button) {
+            let code = button.nextElementSibling.textContent;
+            navigator.clipboard.writeText(code);
+            button.textContent = "✅ تم النسخ";
+            setTimeout(() => button.textContent = "📋 نسخ", 1500);
+        }
+    </script>
+
+</body>
+</html>
